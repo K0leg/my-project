@@ -1,0 +1,23 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+# Useful .gitignore templates: https://github.com/github/gitignore
+node_modules
+dist
+# --- Системні файли (особливо для Mac) ---
+.DS_Store
+._*
+
+# --- Налаштування PhpStorm (їх не треба заливати в Git) ---
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# --- Кеш та логи ---
+/cache/
+/tmp/
+*.log
+
+# --- Якщо використовуєш Node.js або Composer (на майбутнє) ---
+/node_modules/
+/vendor/
