@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Знаходимо елементи
-  const openBtn = document.querySelector('.form-activator .btn-accent'); // Кнопка "Реєстер"
-  const closeBtn = document.querySelector('.contact-form-close');        // Хрестик
+  const openbutton = document.querySelector('.form-activator .button-accent'); // Кнопка "Реєстер"
+  const closebutton = document.querySelector('.contact-form-close');        // Хрестик
   const modal = document.querySelector('.modal-overlay');                // Саме вікно
 
   // Функція відкриття
-  if (openBtn) {
-    openBtn.addEventListener('click', function() {
-      modal.style.display = 'flex'; // Показуємо вікно (flex, щоб працювало центрування)
+  if (openbutton) {
+    openbutton.addEventListener('click', function() {
+      modal.style.display = 'flex';
     });
   }
 
   // Функція закриття
-  if (closeBtn) {
-    closeBtn.addEventListener('click', function() {
-      modal.style.display = 'none'; // Ховаємо вікно
+  if (closebutton) {
+    closebutton.addEventListener('click', function() {
+      modal.style.display = 'none';
     });
   }
 
@@ -24,4 +24,35 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.style.display = 'none';
     }
   });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // 1. Знаходимо кнопку (іконку) бургера
+  const burgerTrigger = document.querySelector('.js-burger-trigger');
+  // 2. Знаходимо саме меню
+  const burgerMenu = document.querySelector('.js-burger-menu');
+
+  // Перевіряємо, чи знайшлися елементи на сторінці
+  if (burgerTrigger && burgerMenu) {
+
+    // Додаємо слухач кліку на іконку
+    burgerTrigger.addEventListener('click', function(e) {
+      // Запобігаємо стандартній поведінці (на всяк випадок)
+      e.preventDefault();
+      // Перемикаємо клас 'is-open' (додає якщо нема, забирає якщо є)
+      burgerMenu.classList.toggle('is-open');
+    });
+
+    // ДОДАТКОВО: Закривати меню при кліку будь-де поза ним
+    document.addEventListener('click', function(e) {
+      const isClickInsideMenu = burgerMenu.contains(e.target);
+      const isClickOnTrigger = burgerTrigger.contains(e.target);
+
+      // Якщо меню відкрите І клік був НЕ по меню І НЕ по іконці -> закриваємо
+      if (burgerMenu.classList.contains('is-open') && !isClickInsideMenu && !isClickOnTrigger) {
+        burgerMenu.classList.remove('is-open');
+      }
+    });
+  }
 });

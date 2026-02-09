@@ -14,7 +14,7 @@ dist
 *.ipr
 
 # --- Кеш та логи ---
-/cache/
+/_html/css/.sass-cache/
 /tmp/
 *.log
 
