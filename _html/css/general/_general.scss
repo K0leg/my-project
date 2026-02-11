@@ -8,24 +8,6 @@
   box-sizing: border-box;
 }
 
-
-/* Базові елементи */
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-  object-fit: cover;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-ul, ol {
-  list-style: none;
-}
-
-
 html {
   height: 100%;
   font-size: 16px;
@@ -51,9 +33,7 @@ main{
 footer{
   //margin-top: auto;
 }
-.hero{
-  background-color: #C9C9;
-}
+
 .container {
   //padding: 0 4.5em;
   margin: 0 auto;
@@ -61,6 +41,40 @@ footer{
   border-left: 5em solid #C9C9CE;
   border-right: 5em solid #C9C9CE;
 }
+
+// h1 h2 h3 ... + like-h2 ...
+
+// + 2 block
+.extra-text {
+  font-size: $font-size-extra;
+  font-weight: 400;
+}
+
+.big-title {
+  font-size: $font-size-big;
+  font-weight: 600;
+}
+
+/* Базові елементи */
+img, picture, video, canvas, svg {
+  //display: block;
+  //max-width: 100%;
+  //object-fit: cover;
+}
+
+// p + span ...
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none; // burger <--
+}
+
+
+
 button {
   max-width: 22.438em;
   width: 100%;
@@ -83,15 +97,7 @@ button {
     box-shadow: 0 4px 15px rgba($color-black, 0.1);
   }
 }
-.extra-text {
-  font-size: $font-size-extra;
-  font-weight: 400;
-}
 
-.big-title {
-  font-size: $font-size-big;
-  font-weight: 600;
-}
 
 input,
 textarea {
@@ -119,6 +125,8 @@ textarea {
   min-height: 6.25em;
 }
 
+
+// delete
 .test-button{
   align-items: center;
   display: flex;
@@ -135,7 +143,7 @@ textarea {
 
 
 
-
+// block burger
 .burger-menu {
   position: absolute;
   top: 75px;
@@ -196,4 +204,9 @@ textarea {
       }
     }
   }
+}
+
+/* block hero */
+.hero{
+  background-color: #C9C9;
 }
